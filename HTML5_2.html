@@ -1,0 +1,240 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>HTML5</title>
+    <style type="text/css">
+        body {
+            font-family: tahoma;
+            background: #f6f6f6;
+        }
+        
+        .container {
+            width: 980px;
+            height: 650px;
+            border: 1px dashed #bd652b;
+            padding: 20px 0 20px 40px;
+            margin: 10px auto;
+        }
+        
+        section {
+            width: 450px;
+            height: 220px;
+            margin: 0 40px 60px 0;
+            float: left;
+        }
+        
+        aside {
+            width: 450px;
+            height: 120px;
+            margin: 0 40px 60px 0;
+            float: left;
+        }
+        
+        footer {
+            width: 980px;
+            height: 100px;
+        }
+        
+        .bashliq {
+            width: 450px;
+            padding: 0 0 10px 0;
+            margin: 0 0 15px 0;
+            border-bottom: 2px solid #dd9d42;
+            color: #104579;
+            font: bold 19px tahoma;
+        }
+        
+        section input,
+        aside input {
+            width: 300px;
+            padding: 5px;
+            border: 1px dashed #a0a0a0;
+            color: #104579;
+            font-size: 14px;
+        }
+        
+        input.radio,
+        input.done {
+            width: 15px;
+        }
+        
+        textarea {
+            width: 930px;
+            height: 65px;
+            pad: 5px;
+            border: 1px solid #ddd;
+            color: #4b4b4b;
+            font-size: 14px;
+        }
+        
+        button,
+        input.send {
+            width: 100px;
+            padding: 10px 25px;
+            margin: 0 30px 20px 0;
+            color: #fff;
+            font-size: 14px;
+            background: #24588f;
+            cursor: pointer;
+            border: none;
+        }
+        
+        tr:hover {
+            color: #bd652b;
+        }
+        
+        tr:hover .black {
+            color: #000;
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: none;
+        }
+        
+        section input:hover {
+            border: 1px dashed #bd652b;
+        }
+    </style>
+    <script type="text/javascript">
+        function esgerlik(x) {
+            if (document.getElementById(x).value == "kishi") {
+                document.getElementById("esger").type = "text";
+            } else {
+                document.getElementById("esger").type = "hidden";
+            }
+        }
+
+        function ach_bagla(x) {
+            if (document.getElementById(x).type == "text") {
+                document.getElementById(x).type = "hidden";
+            } else {
+                document.getElementById(x).type = "text";
+            }
+        }
+
+        function bagla() {
+            document.getElementById("esger").value = "";
+            document.getElementById("digerdil").value = "";
+            document.getElementById("digerbacariq").value = "";
+            document.getElementById("digermaraq").value = "";
+
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="GET">
+        <div class="container">
+            <section>
+                <div class="bashliq">Şəxsi Məlumatlar</div>
+                <table width="450" height="220">
+                    <tr>
+                        <td>Ad</td>
+                        <td>:</td>
+                        <td><input type="text" placeholder="Adınızı daxil edin" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td width="145">Soyad</td>
+                        <td width="5">:</td>
+                        <td width="300"><input type="text" placeholder="Soyadınızı daxil edin" required /></td>
+                    </tr>
+                    <tr>
+                        <td>Doğum Tarixi</td>
+                        <td>:</td>
+                        <td><input type="date"></td>
+                    </tr>
+                    <tr>
+                        <td>Telefon</td>
+                        <td>:</td>
+                        <td><input type="text" pattern="[\(]\d{3}[\)][\s]\d{3}[\s]\d{2}[\s]\d{2}" placeholder="(xxx) xxx xx xx" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail</td>
+                        <td>:</td>
+                        <td><input type="email" placeholder="E-Mail adresinizi daxil edin" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Cinsiyyət</td>
+                        <td>:</td>
+                        <td class="black">
+                            <input id="kishi" name="cinsiyyet" type="radio" value="kishi" class="radio" required="required" onclick="esgerlik(this.id)" />Kişi
+                            <input name="cinsiyyet" type="radio" class="radio" required="required" value="qadin" id="qadin" onclick="esgerlik(this.id)" />Qadın
+                            <input type="hidden" id="esger" name="esger" placeholder="Əsgərlik haqqında məlumat daxil edin" value="" />
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <div class="bashliq">Təhsil Haqqında</div>
+                <table width="450" height="220">
+                    <tr>
+                        <td>Orta Təhsil</td>
+                        <td>:</td>
+                        <td><input type="text" placeholder="Oxuduğunuz məktəbi daxil edin" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td width="145">Tam Orta Təhsil</td>
+                        <td width="5">:</td>
+                        <td width="300"><input type="text" placeholder="Oxuduğunuz məktəbi daxil edin" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Ali Təhsil</td>
+                        <td>:</td>
+                        <td><input type="text" placeholder="Oxuduğunuz universiteti daxil edin" required="required"></td>
+                    </tr>
+                    <tr>
+                        <td>Tam Ali Təhsil</td>
+                        <td>:</td>
+                        <td><input type="text" placeholder="Oxuduğunuz məktəbi daxil edin"></td>
+                    </tr>
+                    <tr>
+                        <td>Doktorantura</td>
+                        <td>:</td>
+                        <td><input type="text" placeholder="Oxuduğunuz məktəbi daxil edin"></td>
+                    </tr>
+                    <tr>
+                        <td>Xarici Dil</td>
+                        <td>:</td>
+                        <td class="black">
+                            <input name="" type="checkbox" class="done">İngilis
+                            <input name="" type="checkbox" class="done">Rus
+                            <input name="" type="checkbox" class="done">Alman
+                            <input name="" type="checkbox" class="done" onclick="ach_bagla('digerdil')">Digər
+                            <input type="hidden" name="" id="digerdil" placeholder="Digər bildiyiniz dili daxil edin">
+                        </td>
+                    </tr>
+                </table>
+            </section>
+            <aside>
+                <div class="bashliq">Xüsusi Maraqlar</div>
+                <input name="" type="checkbox" class="done">Kino<br/>
+                <input name="" type="checkbox" class="done">Teatr<br/>
+                <input name="" type="checkbox" class="done">İdman<br/>
+                <input name="" type="checkbox" class="done">Kitab<br/>
+                <input name="" type="checkbox" class="done" onclick="ach_bagla('digermaraq')">Digər
+                <input type="hidden" name="" id="digermaraq" placeholder="Digər marağınızı daxil edin">
+
+            </aside>
+            <aside>
+                <div class="bashliq">Bacarıqlar</div>
+                <input name="" type="checkbox" class="done">HTML<br/>
+                <input name="" type="checkbox" class="done">CSS<br/>
+                <input name="" type="checkbox" class="done">PHP<br/>
+                <input name="" type="checkbox" class="done">Asp.net<br/>
+                <input name="" type="checkbox" class="done" onclick="ach_bagla('digerbacariq')">Digər
+                <input type="hidden" name="" id="digerbacariq" placeholder="Digər bacarığınızı daxil edin">
+            </aside>
+            <footer>
+                <div class="bashliq">Düşüncələriniz</div>
+                <textarea required="required"></textarea><br/><br/>
+                <input type="button" value="Göndər" class="send">
+                <input type="reset" value="Reset" class="send" onclick="bagla()">
+            </footer>
+        </div>
+    </form>
+</body>
+
+</html>
